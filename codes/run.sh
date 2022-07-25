@@ -1,0 +1,1 @@
+nohup python codes/main.py --data_prop -2 --kfolds 5 --model bigbird --hidden_dim 512 --bigbird_layer 1 --num_att_head 32 --pretrained 'model_checkpoints/kfolds/resnet_1/5/best.pt' --batch_size 4 --device "cuda:0" --mode test --test_path 'model_checkpoints/kfolds/bigbird_1_1/5' > out_logs/full_bigbird_coswp10_lr5e5_valshuffled_fold5_test.log 2>&1 &

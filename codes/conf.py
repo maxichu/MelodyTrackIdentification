@@ -1,0 +1,46 @@
+import argparse
+
+def parse_arg():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--model', type=str, default='resnet', 
+                    help='choose a model: resnet,crnn')
+    parser.add_argument('--option',type=str, default='1')
+    parser.add_argument('--batch_size', type=int, default=64)
+    parser.add_argument('--optim', type=str, default='adam')
+    parser.add_argument('--lr', type=float, default=0.001)
+    parser.add_argument('--epoch', type=int, default=10)
+    parser.add_argument('--save_every', type=int, default=5)
+    parser.add_argument('--data_prop', type=float, default=0.1)
+    parser.add_argument('--stratify', type=bool, default=False)
+    parser.add_argument('--load_last_ckpt', type=bool, default=False)
+    parser.add_argument('--last_ckpt_dir', type=str, default=None)
+    parser.add_argument('--kfolds', type=int, default=0)
+    parser.add_argument('--hidden_dim', type=int, default=256)
+    parser.add_argument('--rnn_layer', type=int, default=1)
+    parser.add_argument('--bidirectional', type=bool, default=False)
+    parser.add_argument('--device', type=str, default='cuda:0')
+    parser.add_argument('--pretrained', type=str, default=None)
+    parser.add_argument('--m', type=str, default=None, help='message')
+    parser.add_argument('--job_no', type=int, default=0)
+    parser.add_argument('--dropout_after_rnn', type=float, default=0.3)
+    parser.add_argument('--weight_decay', type=float, default=0)
+    parser.add_argument('--bigbird_layer',type=int,default=1)
+    parser.add_argument('--num_att_head',type=int,default=2)
+    parser.add_argument('--lr_scheduler',type=str,default='exp')
+    parser.add_argument('--lr_warmup',type=bool,default=False)
+    parser.add_argument('--hard_restart',type=bool,default=False)
+    parser.add_argument('--num_random_blocks',type=int,default=3)
+    parser.add_argument('--block_size',type=int,default=64)
+    parser.add_argument('--hidden_dropout_prob',type=float,default=0.1)
+    parser.add_argument('--classifier_dropout',type=float,default=None)
+    parser.add_argument('--warmup_ratio',type=float,default=0.1)
+    parser.add_argument('--mode',type=str,default='train')
+    parser.add_argument('--test_threshold',type=float,default=0.8)
+    parser.add_argument('--test_path',type=str,default=None)
+    parser.add_argument('--dropout1',type=float,default=0.5)
+    parser.add_argument('--dropout2',type=float,default=0.3)
+
+    args = parser.parse_args()
+
+    return args
